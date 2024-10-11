@@ -6,19 +6,19 @@
             "value": "nonprod"
         },
         "postgreSQLServerName": {
-            "value": "prodrigano-dbsrv-dev"
+            "value": "prodrigano-dbsrv-uat"
         },
         "postgreSQLDatabaseName": {
-            "value": "prodrigano-db-dev"
+            "value": "prodrigano-db-uat"
         },
         "appServicePlanName": {
-            "value": "prodrigano-asp-dev"
+            "value": "prodrigano-asp-uat"
         },
         "appServiceAPIAppName": {
-            "value": "prodrigano-be-dev"
+            "value": "prodrigano-be-uat"
         },
         "appServiceAppName": {
-            "value": "prodrigano-fe-dev"
+            "value": "prodrigano-fe-uat"
         },
         "location": {
             "value": "North Europe"
