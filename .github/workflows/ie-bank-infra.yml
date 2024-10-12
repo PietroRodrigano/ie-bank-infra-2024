@@ -5,7 +5,7 @@ on:
   push:
       paths-ignore:
         - 'scripts/**'
-
+# work please
 env:
   RESOURCE_GROUP_DEV: BCSAI2024-DEVOPS-STUDENTS-A-DEV
   RESOURCE_GROUP_UAT: BCSAI2024-DEVOPS-STUDENTS-A-UAT
