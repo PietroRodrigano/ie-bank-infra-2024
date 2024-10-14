@@ -54,10 +54,10 @@ jobs:
   deploy-UAT:
   #   if: github.ref == 'refs/heads/dev'
       runs-on: ubuntu-latest
-      needs: build
+      needs: [build, deply-dev]
       environment:
-        name: 'uat'
-
+        name: 'UAT'
+#dope
       steps:
 
         # Checkout code
@@ -72,10 +72,10 @@ jobs:
       - name: deploy
         uses: azure/arm-deploy@v2
         with:
-          subscriptionId: ${{ env.SUBSCRIPTION_ID_DEV }}
-          resourceGroupName: ${{ env.RESOURCE_GROUP_DEV }}
+          subscriptionId: ${{ env.SUBSCRIPTION_ID_UAT }}
+          resourceGroupName: ${{ env.RESOURCE_GROUP_UAT }}
           template: ./main.bicep
-          parameters: ./parameters/dev.parameters.json  appServiceAPIEnvVarENV=${{ vars.ENV }} appServiceAPIEnvVarDBHOST=${{ vars.DBHOST }} appServiceAPIEnvVarDBNAME=${{ vars.DBNAME }} appServiceAPIEnvVarDBPASS=${{ secrets.DBPASS }} appServiceAPIDBHostDBUSER=${{ secrets.DBUSER }} appServiceAPIDBHostFLASK_APP=${{ vars.FLASK_APP }} appServiceAPIDBHostFLASK_DEBUG=${{ vars.FLASK_DEBUG }}
+          parameters: ./parameters/uat.parameters.json  appServiceAPIEnvVarENV=${{ vars.ENV }} appServiceAPIEnvVarDBHOST=${{ vars.DBHOST }} appServiceAPIEnvVarDBNAME=${{ vars.DBNAME }} appServiceAPIEnvVarDBPASS=${{ secrets.DBPASS }} appServiceAPIDBHostDBUSER=${{ secrets.DBUSER }} appServiceAPIDBHostFLASK_APP=${{ vars.FLASK_APP }} appServiceAPIDBHostFLASK_DEBUG=${{ vars.FLASK_DEBUG }}
           deploymentName: ${{ env.USER_ALIAS }}
 
 # please work
